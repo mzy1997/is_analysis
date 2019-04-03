@@ -31,7 +31,7 @@ admin -->(预定处理)
 @enduml
 ```
 ### 1.2. 用例图如下：
-<img src="https://github.com/mzy1997/is_analysis/blob/master/test2/libSys_User1.png" />
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test2/libSys_User.png" />
 
 ## 2. 参与者说明：
 ### - 图书管理员
