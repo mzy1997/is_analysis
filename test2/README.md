@@ -31,7 +31,8 @@ admin -->(预定处理)
 @enduml
 ```
 ### 1.2. 用例图如下：
-<img src="https://github.com/mzy1997/is_analysis/blob/master/test2/libSys.png" />
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test2/libSys_User1.png" />
+
 ## 2. 参与者说明：
 ### - 图书管理员
 主要职责:负责处理借书人提交的借出、归还和预定请求，维护图书与借书人的信息
