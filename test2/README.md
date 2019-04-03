@@ -15,7 +15,7 @@ user ->(还书)
 user  -left->(查询借阅情况)
 (借书) ..> (查询书籍) :<<include>>
 (书籍预定) ..>(查询书籍) :<<include>>
-(续借) -> (借书) :<<extend>>
+(续借) -> (借书) :<<include>>
 
 left to right direction
 actor 图书管理员 as admin
