@@ -119,6 +119,14 @@ class 罚款细则{
 <img src="https://github.com/mzy1997/is_analysis/blob/master/test3/lib_Class.png" />
 
 ### 1.3. 类图说明：
+1.一个馆藏目录可能有一个或多个馆藏资源品种\n
+2.馆藏资源品种包含资源项，是抽象类，图书品种、碟片品种是其子类\n
+3.一个馆藏资源品种可以有0个或多个预定记录;\n
+4.每个读者可以有0个或多个预定记录;\n
+5.一个借书记录可以有0个或1个逾期记录;\n
+6.每个图书管理员登记0个或多个借书记录;\n
+7.每个资源项有0个或一个借书记录;\n
+8.每位读者0个或多个与前期记录对应有0个或1个罚款细则;\n
 ## 2. 图书管理系统的对象图
 ### 2.1类读者的对象图
 #### 源码如下：
@@ -134,6 +142,8 @@ object 读者{
 }
 ```
 #### 对象图如下：
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object3.png" />
+
 ### 2.2 类图书的对象图
 #### 源码如下：
 ```
@@ -152,6 +162,8 @@ object 图书品种{
 }
 ```
 #### 对象图如下:
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object1.png" />
+
 ### 2.3 类碟片的对象图
 #### 源码如下：
 ```
@@ -171,6 +183,8 @@ object 碟片品种{
 }
 ```
 #### 对象图如下:
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object2.png" />
+
 ### 2.4 类图书管理员的对象图
 #### 源码如下：
 ```
@@ -180,6 +194,8 @@ object 图书管理员{
 }
 ```
 #### 对象图如下:
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object4.png" />
+
 ### 2.5 类借书记录的对象图
 #### 源码如下：
 ```
@@ -197,6 +213,8 @@ object 罚款细则{
 逾期记录 *--"1"罚款细则
 ```
 #### 对象图如下:
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object5.png" />
+
 ### 2.6 类预定记录的对象图
 #### 源码如下：
 ```
@@ -210,3 +228,4 @@ object 资源项{
 预定记录 o--"*"资源项
 ```
 #### 对象图如下:
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/object6.png" />
