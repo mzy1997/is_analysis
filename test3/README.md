@@ -116,6 +116,7 @@ class 罚款细则{
 @enduml
 ```
 ### 1.2. 类图如下：
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test3/lib_Class.png" />
 ### 1.3. 类图说明：
 ## 2. 图书管理系统的对象图
 ### 2.1类user的对象图
