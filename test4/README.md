@@ -340,3 +340,67 @@ end
 读者查询自身的预定记录
 ##### 4.3.4维护自身信息
 读者查询、修改自身信息
+### 5.预定处理用例
+#### 5.1预定处理用例PlantUML源码
+```
+@startuml
+title 预定顺序图
+actor 图书管理员
+participant 读者
+participant 资源项
+participant 馆藏资源品种
+participant 预定记录
+activate 图书管理员
+图书管理员 -> 读者 :取读者消息
+note left:消息
+activate 读者
+读者 -> 图书管理员 :返回读者信息
+deactivate 读者
+alt 读者有资格借书
+图书管理员->资源项:获取资源项
+activate 图书管理员
+activate 资源项
+资源项->馆藏资源品种:查找资源品种
+deactivate 资源项
+activate 馆藏资源品种
+馆藏资源品种->馆藏资源品种:减少可借额度
+馆藏资源品种-->图书管理员:返回具体信息
+deactivate 馆藏资源品种
+deactivate 图书管理员
+图书管理员 -> 预定记录 :修改读者预定情况
+activate 预定记录
+预定记录 ->图书管理员 :预定信息
+deactivate 预定记录
+note left:返回消息
+图书管理员->读者:减少可借额度
+activate 读者
+读者-->图书管理员
+deactivate 读者
+opt 取消预定
+图书管理员->预定记录
+activate 预定记录
+预定记录->预定记录:delete
+预定记录->馆藏资源品种
+deactivate 预定记录
+activate 馆藏资源品种
+馆藏资源品种->馆藏资源品种:增加可借额度
+馆藏资源品种-->资源项
+deactivate 馆藏资源品种
+activate 资源项
+资源项-->图书管理员
+deactivate 资源项
+图书管理员-->读者:取消预定成功
+activate 读者
+deactivate 读者
+end
+deactivate 图书管理员
+else 读者没有资格预定
+图书管理员->读者:拒绝消息
+end
+@enduml
+```
+#### 5.2预定处理用例顺序图
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test4/lib_Sequence.png" />
+
+#### 5.3预定处理用例顺序图说明
+图书管理员取到读者消息，根据得到的信息判断读者是否有资格预定(预定额度有无余量、预定的图书有无可借额度)。如果读者有资格预定，图书管理员根据资源项查询到图书的具体信息(馆藏资源品种减少自身的可借额度),图书管理员修改读者的预定记录，再减少读者的预定额度。如果遇到读者取消预定的情况，图书管理员查询到相应的预定记录，调用delete方法删除此记录，馆藏资源品种增加自己的可借额度，图书管理员最后向读者返回预定成功的消息。如果读者没有资格预定，图书管理员向读者发送一个拒绝消息。
