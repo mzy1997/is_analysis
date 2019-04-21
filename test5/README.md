@@ -14,6 +14,7 @@
 |  store_num  |     string    |      |否|||在库总数|
 |  ava_num  |     string    |      |否|||可借总数|
 |  dv_company  |     string    |      |否|||制作公司|
+|  dv_category  |     string    |      |否|||碟片分类|
 |  dv_picture  |     image    |      |否|||碟片图片|
 
 
@@ -30,6 +31,7 @@
 |  book_press  |     string    |      |否|||出版社|
 |  book_date  |     date    |      |否|||出版日期|
 |  book_picture  |     image    |      |否|||图书图片|
+|  book_category  |     string    |      |否|||图书分类|
 
 ### 1.3资源项表
 |    字段    |       类型       |      主键，外键     |是否为空|默认值|约束|说明|
