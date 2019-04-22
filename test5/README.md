@@ -104,7 +104,7 @@ https://mzy1997.github.io/is_analysis_pages/index.html
 
 #### 1) 请求地址
 
->http://[YOUR_DOMAIN]/v1/api/book_detals
+>http://mzy1997.github.io/is_analysis_pages/v1/api/book_detals
 
 #### 2) 调用方式：GET
 
@@ -153,7 +153,7 @@ https://mzy1997.github.io/is_analysis_pages/index.html
 
 #### 1) 请求地址
 
->http://[YOUR_DOMAIN]/v1/api/book_details
+>http://mzy1997.github.io/is_analysis_pages/v1/api/book_details
 
 #### 2) 调用方式：GET
 
@@ -191,7 +191,7 @@ https://mzy1997.github.io/is_analysis_pages/index.html
 
 #### 1) 请求地址
 
->http://[YOUR_DOMAIN]/v1/api/borrow
+>http://mzy1997.github.io/is_analysis_pages/v1/api/borrow
 
 #### 2) 调用方式：Post
 
