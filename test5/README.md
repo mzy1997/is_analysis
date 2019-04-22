@@ -97,4 +97,5 @@
 <img src="https://github.com/mzy1997/is_analysis/blob/master/test5/page2.png"/>
 
 ### 2.1.4借书界面首页链接
-[index]: https://github.com/mzy1997/is_analysis_pages/blob/master/index.html "index页面"
+https://mzy1997.github.io/is_analysis_pages/index.html
+(页面加载较慢)
