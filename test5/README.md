@@ -87,3 +87,9 @@
 
 ## 2.界面设计
 ### 2.1借书界面
+### 2.1.1借书界面首页
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test1/5617531AD9394A6243FCDEEBF0F683B1.jpg" width="200" height="300" />
+### 2.1.2借书界面详情页
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test1/5617531AD9394A6243FCDEEBF0F683B1.jpg" width="200" height="300" />
+### 2.1.3借书界面确认页
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test1/5617531AD9394A6243FCDEEBF0F683B1.jpg" width="200" height="300" />
