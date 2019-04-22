@@ -88,13 +88,13 @@
 ## 2.界面设计
 ### 2.1借书界面
 ### 2.1.1借书界面首页
-<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/index.png"/>
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/index1.jpg"/>
 
 ### 2.1.2借书界面详情页
-<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/page1.png"/>
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/newpage1.jpg"/>
 
 ### 2.1.3借书界面确认页
-<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/page2.png"/>
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test5/newpage2.jpg"/>
 
 ### 2.1.4借书界面首页链接
 https://mzy1997.github.io/is_analysis_pages/index.html
