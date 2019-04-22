@@ -9,10 +9,10 @@
 |:-------:|:-------------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|
 |  isbn  |     int    |   主键   |否|||国际出版号|
 |  dv_name  |     varchar    |      |否|||碟片名称|
-|  dv_type |     string    |      |否|||碟片价格|
+|  dv_price |     double    |      |否|||碟片价格|
 |  dv_describe  |     string    |      |是|||碟片简介|
-|  store_num  |     string    |      |否|||在库总数|
-|  ava_num  |     string    |      |否|||可借总数|
+|  store_num  |     string    |      |否||max>=ava_num|在库总数|
+|  ava_num  |     string    |      |否||max<=store_num|可借总数|
 |  dv_company  |     string    |      |否|||制作公司|
 |  dv_category  |     string    |      |否|||碟片分类|
 |  dv_picture  |     image    |      |否|||碟片图片|
@@ -25,8 +25,8 @@
 |  book_name  |     varchar    |      |否|||图书名称|
 |  book_price  |     double    |      |否|||图书价格|
 |  book_describe  |     string    |      |是|||图书简介|
-|  store_num  |     string    |      |否|||在库总数|
-|  ava_num  |     string    |      |否|||可借总数|
+|  store_num  |     string    |      |否||max>=ava_num|在库总数|
+|  ava_num  |     string    |      |否||max<=store_num|可借总数|
 |  book_author  |     string    |      |否|||作者|
 |  book_press  |     string    |      |否|||出版社|
 |  book_date  |     date    |      |否|||出版日期|
@@ -63,8 +63,8 @@
 |    字段    |       类型       |      主键，外键     |是否为空|默认值|约束|说明|
 |:-------:|:-------------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|
 |  borrow_id  |     int    |   主键   |否||AUTO_INCREMENT|借书记录ID|
-|  borrow_date  |     date    |      |否|||借书时间|
-|  bringback_date  |     date    |      |是|空||还书时间,允许为空，如果为空则表示尚未归还|
+|  borrow_date  |     date    |      |否||isDate()==True|借书时间|
+|  bringback_date  |     date    |      |是|空|isDate()==True|还书时间,允许为空，如果为空则表示尚未归还|
 |  admin_id  |     int    |    外键  |否|||处理此借书记录的管理员职工号|
 |  reader_borrowid  |     int    |   外键   |否|||存储借此书读者的卡号|
 |  source_id  |     int    |   外键   |否|||存储所借图书的流水号|
@@ -72,7 +72,7 @@
 ### 1.7逾期记录表
 |    字段    |       类型       |      主键，外键     |是否为空|默认值|约束|说明|
 |:-------:|:-------------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|
-|  expect_id  |     int    |   主键   |否|||逾期记录ID|
+|  expect_id  |     int    |   主键   |否||AUTO_INCREMENT|逾期记录ID|
 |  expect_money  |     double    |      |否|0||罚款金额，默认值为0|
 
 
@@ -80,7 +80,7 @@
 |    字段    |       类型       |      主键，外键     |是否为空|默认值|约束|说明|
 |:-------:|:-------------:|:----------:|:-----------:|:-----------:|:-----------:|:-----------:|
 |  schedule_id  |     int    |   主键   |否||AUTO_INCREMENT|预定记录ID|
-|  schedule_date  |     date   |      |否|||预定时间|
+|  schedule_date  |     date   |      |否||isDate()==True|预定时间|
 |  isbn  |     int    |   外键   |否|||所预定图书的ISBN|
 |  reader_borrowid  |     int    |   外键   |否|||提交预定申请的读者的借书卡号|
 |  admin_id  |     int    |    外键  |否|||处理此预定申请的图书管理员工号|
