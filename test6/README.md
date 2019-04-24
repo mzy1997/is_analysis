@@ -16,3 +16,5 @@
 ## 2.系统总体结构
 <img src="https://github.com/mzy1997/is_analysis/blob/master/test6/systemStructure.png"/>
 
+## 3.用例图设计
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test6/UserCase.png"/>
