@@ -3,9 +3,10 @@ title 基于GitHub的实验管理平台--用例图
 actor users
 actor teachers
 actor students
+actor admin
 users <|-- teachers
 users <|-- students
-
+users <|-- admin
 package 用户用例集{
 users -up-> (修改密码)
 users -up-> (修改用户信息)
@@ -16,6 +17,7 @@ users -up-> (登出)
 package 业务用例集{
 teachers --> (选择课程)
 students --> (选择课程)
+(选择课程) -down-> (修改选课):<<extend>>
 teachers -down-> (查看课程)
 package teachers业务用例集{
 (查看课程) -down-> (设定评分项)
@@ -27,4 +29,8 @@ students -down-> (查看课程)
 (查看课程) --> (查看成绩)
 }
 }
+
+admin --> (维护课程信息)
+admin --> (维护教师信息)
+admin --> (维护学生信息)
 @enduml
