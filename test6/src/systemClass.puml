@@ -1,13 +1,16 @@
 @startuml
 
 abstract class User{
--用户名 : String
+-用户ID : int
 -密码 : String
 -姓名 : String
 -性别 : String
 -头像 : Image
 -出生日期 : Date
 -住址 : String
+-github用户名 : String
+-github修改时间 : Date
+-是否被禁用 : Boolean
 -show()
 -find()
 -update()
