@@ -43,7 +43,6 @@ class Teacher{
 -学院 : String
 -学历 : String
 -专业 : String
--学历 : String
 -chooseClass()
 -updateClass()
 -showResults()
@@ -57,7 +56,7 @@ User <|-- Student
 User <|-- Teacher
 User <|-left- Admin
 
-class Class{
+class Lesson{
 -课程编号 : int
 -课程名 : String
 -课程类型 : String
@@ -99,10 +98,10 @@ class ScoringItems{
 -show()
 }
 
-Teacher "0..1" o-- "0..*" Class:选课
-Student "0..*" o--"0..*" Class:选课
-Class "1" *--"*" Test
-Test "1" *--"*" ScoringItems
+Teacher "0..1" o-- "0..*" Lesson:选课
+Student "0..*" o--"0..*" Lesson:选课
+Lesson "1" *--"*" Test:has
+Test "1" *--"*" ScoringItems:has
 Teacher -- Test:创建实验 >
 Teacher -- ScoringItems:设定评分项 >
 
@@ -113,7 +112,6 @@ class Score{
 -教师评语 : String
 -评改时间 : Date
 -学生学号 : int
--实验编号 : int
 -评分项编号 : int
 -update()
 -delete()
@@ -123,8 +121,21 @@ class Score{
 -count()
 }
 
-Test "1" -right-"1" Score:实验总成绩
+class TestAverage{
+-分数 : double
+-实验编号 : int
+-学生学号 : int
+-getAverage()
+}
+
+class LessonAverage{
+-分数 : double
+-课程编号 : int
+-学生学号 : int
+-getAverage()
+}
 ScoringItems "1"-right-"1" Score:单个评定项成绩
-Class "1"-right-"1" Score:课程总成绩
-Teacher "1"--"*" Score:评定成绩
+Teacher "1"--"*" Score:评定成绩 >
+Test "1" -left->"*" TestAverage
+Lesson "1" -->"*" LessonAverage
 @enduml

@@ -22,7 +22,8 @@ teachers -down-> (查看课程)
 package teachers业务用例集{
 (查看课程) -down-> (设定实验)
 (设定实验) -down-> (设置评分项)
-(查看课程)-down-> (评定成绩)
+(查看课程)-down-> (选择实验)
+(选择实验) --> (评定成绩)
 (查看课程) -down-> (查看学生列表)
 }
 package students业务用例集{
