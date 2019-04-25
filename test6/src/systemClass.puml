@@ -1,26 +1,127 @@
 @startuml
 
-abstract class AbstractList
-abstract AbstractCollection
-interface List
-interface Collection
-
-List <|-- AbstractList
-Collection <|-- AbstractCollection
-
-Collection <|- List
-AbstractCollection <|- AbstractList
-AbstractList <|-- ArrayList
-
-class ArrayList {
-Object[] elementData
-size()
+abstract class User{
+-用户名 : String
+-密码 : String
+-姓名 : String
+-性别 : String
+-头像 : Image
+-出生日期 : Date
+-住址 : String
+-show()
+-find()
+-update()
 }
 
-enum TimeUnit {
-DAYS
-HOURS
-MINUTES
+class Admin{
+-管理员号 : String
+-showAll()
+-findTeaStuClass()
+-deleteTeaStuClass()
+-insertTeaStuClass()
+-updateTeaStuClass()
 }
 
+class Student{
+-学号 : int
+-学院 : String
+-专业 : String
+-年级 : String
+-班级 : String
+-学历 : String
+-chooseClass()
+-updateClass()
+-showResult()
+-showClass()
+}
+
+class Teacher{
+-职工号 : int
+-学院 : String
+-学历 : String
+-专业 : String
+-学历 : String
+-chooseClass()
+-updateClass()
+-showResults()
+-showClass()
+-updateResults()
+-createTest()
+-setRules()
+}
+
+User <|-- Student
+User <|-- Teacher
+User <|-left- Admin
+
+class Class{
+-课程编号 : int
+-课程名 : String
+-课程类型 : String
+-课程简介 : String
+-发布日期 : Date
+-update()
+-delete()
+-find()
+-insert()
+-show()
+-count()
+}
+
+class Test{
+-实验编号 : int
+-实验名 : String
+-实验类型 : String
+-实验简介 : String
+-实验总分 : int
+-发布日期 : Date
+-update()
+-delete()
+-find()
+-insert()
+-show()
+-count()
+}
+
+class ScoringItems{
+-评分项编号 : int
+-评分项名 : String
+-评分项简介 : String
+-评分项分数 : int
+-发布日期 : Date
+-update()
+-delete()
+-find()
+-insert()
+-show()
+}
+
+Teacher "0..1" o-- "0..*" Class:选课
+Student "0..*" o--"0..*" Class:选课
+Class "1" *--"*" Test
+Test "1" *--"*" ScoringItems
+Teacher -- Test:创建实验 >
+Teacher -- ScoringItems:设定评分项 >
+
+
+class Score{
+-分数 : double
+-评阅教师职工号 : int
+-教师评语 : String
+-评改时间 : Date
+-学生学号 : int
+-实验编号 : int
+-评分项编号 : int
+-update()
+-delete()
+-find()
+-insert()
+-show()
+-count()
+}
+
+Test "1" -right-"1" Score:实验总成绩
+ScoringItems "1"-right-"1" Score:单个评定项成绩
+Class "1"-right-"1" Score:课程总成绩
+Teacher "1"--"*" Score:评定成绩
 @enduml

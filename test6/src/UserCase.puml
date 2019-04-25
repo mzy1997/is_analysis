@@ -20,7 +20,8 @@ students --> (选择课程)
 (选择课程) -down-> (修改选课):<<extend>>
 teachers -down-> (查看课程)
 package teachers业务用例集{
-(查看课程) -down-> (设定评分项)
+(查看课程) -down-> (设定实验)
+(设定实验) -down-> (设置评分项)
 (查看课程)-down-> (评定成绩)
 (查看课程) -down-> (查看学生列表)
 }

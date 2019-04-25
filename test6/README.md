@@ -20,4 +20,4 @@
 <img src="https://github.com/mzy1997/is_analysis/blob/master/test6/UserCase.png"/>
 
 ## 4. 类图设计
-
+<img src="https://github.com/mzy1997/is_analysis/blob/master/test6/systemClass.png"/>
