@@ -132,6 +132,7 @@ class LessonAverage{
 -分数 : double
 -课程编号 : int
 -学生学号 : int
+-github网址汇总 : String
 -getAverage()
 }
 ScoringItems "1"-right-"1" Score:单个评定项成绩
