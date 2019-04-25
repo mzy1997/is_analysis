@@ -25,6 +25,9 @@
 ## 5.数据库设计
 [参见数据库详细设计][3]
 
+## 6.用例及界面详细设计
+
+
 [1]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/UserCase.puml     "源码" 
 [2]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/systemClass.puml     "源码" 
 [3]: https://github.com/mzy1997/is_analysis/blob/master/test6/数据库设计.md     "参见数据库详细设计"
