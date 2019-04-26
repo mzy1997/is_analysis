@@ -28,9 +28,11 @@
 ## 6.用例及界面详细设计
 - [学生列表用例][4]
 - [选择课程][5]
+- [设定实验与评分项][6]
 
 [1]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/UserCase.puml     "源码" 
 [2]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/systemClass.puml     "源码" 
 [3]: https://github.com/mzy1997/is_analysis/blob/master/test6/数据库设计.md     "参见数据库详细设计"
 [4]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/学生列表.md     "学生列表用例"
-[5]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/选择课程.md     "选择课程用例"
+[5]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/选课.md     "选择课程用例"
+[6]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/设定实验与评分项.md     "设定实验与评分项"
