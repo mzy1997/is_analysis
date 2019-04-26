@@ -62,12 +62,14 @@ class Lesson{
 -课程类型 : String
 -课程简介 : String
 -发布日期 : Date
+-是否被选 :Boolean
 -update()
 -delete()
 -find()
 -insert()
 -show()
 -count()
+-sort()
 }
 
 class Test{
