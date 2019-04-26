@@ -1,0 +1,77 @@
+@startuml
+title 查看学生列表
+actor users
+participant lesson
+participant student
+participant lessonAverage
+participant test
+participant testAverage
+participant scoreItems
+participant score
+
+
+alt users身份为admin
+    activate users
+    users -> lesson:访问所有课程列表;
+    activate lesson
+    lesson -> student:访问某课程的学生列表
+    activate student
+    student -> lessonAverage:访问该课程平均分
+    deactivate student
+    deactivate lesson
+    activate lessonAverage
+    lessonAverage -->users
+    deactivate lessonAverage
+    lesson -> test:访问该课程的实验
+    activate lesson
+    activate test
+    test -> testAverage:访问该实验的平均分
+    deactivate lesson
+    deactivate test
+    activate testAverage
+    testAverage --> users
+    deactivate testAverage
+    test ->scoreItems:访问该实验具体得分项
+    activate test
+    activate scoreItems
+    scoreItems -> score:查询具体得分情况
+    activate score
+    score --> users
+    deactivate test
+    deactivate scoreItems
+    deactivate score
+    deactivate users
+
+else users身份为teacher
+    users -> lesson:访问本学期自选课程列表;
+    activate users
+    activate lesson
+    lesson -> student:访问本学期某自选课程的学生列表
+    activate student
+    student -> lessonAverage:访问该自选课程平均分
+    deactivate student
+    deactivate lesson
+    activate lessonAverage
+    lessonAverage -->users
+    deactivate lessonAverage
+    lesson -> test:访问该自选课程的实验
+    activate lesson
+    activate test
+    test -> testAverage:访问该实验的平均分
+    deactivate lesson
+    deactivate test
+    activate testAverage
+    testAverage --> users
+    deactivate testAverage
+    test ->scoreItems:访问该实验具体得分项
+    activate test
+    activate scoreItems
+    scoreItems -> score:查询具体得分情况
+    deactivate test
+    activate score
+    deactivate scoreItems
+    score --> users
+    deactivate score
+    deactivate users
+    end
+@enduml
