@@ -1,0 +1,36 @@
+@startuml
+actor users
+participant lesson
+participant student
+participant test
+participant testaverage
+== 教师查看课程平均分 ==
+users -> lesson:访问已选课程列表
+activate users
+activate lesson
+lesson -> student:访问课程的学生列表
+deactivate lesson
+activate student
+student ->test:访问此学生该课程的实验
+activate test
+test -> testaverage:返回到学生列表上
+activate testaverage
+testaverage -->users
+deactivate testaverage
+deactivate student
+deactivate users
+deactivate test
+== 学生查看课程平均分 ==
+users -> lesson:访问已选课程列表
+activate users
+activate lesson
+lesson ->test:访问此学生该课程的实验
+activate test
+test -> testaverage
+activate testaverage
+testaverage --> users
+deactivate testaverage
+deactivate test
+deactivate lesson
+deactivate users
+@enduml

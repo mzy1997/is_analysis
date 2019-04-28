@@ -1,7 +1,31 @@
 @startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+title 设定实验与评分项
+actor teacher
+participant lesson
+participant test
+participant scoreItems
+alt 教师是否登录
+    teacher -> lesson:访问已选课程
+    activate teacher
+    activate lesson
+    alt 已选课
+         lesson->test
+         activate test
+         test -> test:add
+         note left:增加实验
+         test ->scoreItems
+         activate scoreItems
+         scoreItems -> scoreItems:add
+         note left:增加评分项
+         scoreItems --> teacher:本课程每个实验的评分项细则
+         deactivate lesson
+         deactivate test
+         deactivate scoreItems
+    else 未选课
+         lesson --> teacher:无法设定实验与评分项/请先选课
+         note left:message
+         deactivate teacher
+         deactivate lesson
+end
+end
 @enduml

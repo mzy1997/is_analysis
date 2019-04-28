@@ -1,0 +1,71 @@
+@startuml
+actor users
+participant 登录页面
+participant 登出按钮
+control controller
+database database
+participant 主页
+== 登录 ==
+users -> 登录页面:访问登录页面
+activate users
+activate 登录页面
+登录页面 -> controller
+activate controller
+controller --> 登录页面:提供验证信息
+登录页面 -> controller:提交验证信息
+alt 验证信息正确
+    controller -> database:验证用户\n帐号密码
+    activate database
+    alt 帐号密码正确
+        database --> controller:successful
+        activate 主页
+        deactivate database
+        controller -> 主页:跳转
+        deactivate 登录页面
+        deactivate 主页
+        deactivate controller
+    else 帐号密码不正确
+        database --> controller:failed
+        activate database
+        activate controller
+        controller --> users:登录失败
+        deactivate database
+        deactivate controller
+    end
+else 验证信息错误
+    controller --> users :验证码错误
+    activate controller
+    deactivate controller
+end
+deactivate users
+
+== 登出 ==
+users -> 登出按钮 :点击
+activate users
+activate 登出按钮
+登出按钮 ->controller
+activate controller
+deactivate 登出按钮
+controller -->users:是否退出
+note left:确认消息
+users -> controller:确定
+opt 有未保存信息
+    controller -->users :save or not?
+    note left:确认消息
+    alt 用户选择保存
+        users -> controller:save
+        controller -> database :write
+        activate database
+        database --> controller:successful
+        deactivate database
+    else 用户选择不保存
+        users ->controller: not save
+        controller->controller:release cache
+    end
+end
+controller -->users:shutdown
+deactivate controller
+deactivate users
+destroy users
+
+@enduml

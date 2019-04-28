@@ -1,0 +1,43 @@
+@startuml
+actor users
+participant lesson
+participant student
+participant test
+participant scoreitems
+participant score
+== 教师查看课程平均分 ==
+users -> lesson:访问已选课程列表
+activate users
+activate lesson
+lesson -> student:访问课程的学生列表
+deactivate lesson
+activate student
+student ->test:访问此学生该课程的实验
+activate test
+deactivate student
+test -> scoreitems:访问该实验的评分项
+activate scoreitems
+scoreitems -> score:取得具体得分信息(分值、评语、评分教师、评分时间等)
+activate score
+score -->users
+deactivate test
+deactivate scoreitems
+deactivate score
+deactivate users
+== 学生查看课程平均分 ==
+users -> lesson:访问已选课程列表
+activate users
+activate lesson
+lesson ->test:访问此学生该课程的实验
+deactivate lesson
+activate test
+test -> scoreitems:访问该实验的评分项
+deactivate test
+activate scoreitems
+scoreitems -> score:取得具体得分信息(分值、评语、评分教师、评分时间等)
+activate score
+deactivate scoreitems
+score -->users
+deactivate score
+deactivate users
+@enduml
