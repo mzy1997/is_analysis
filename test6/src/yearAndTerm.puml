@@ -1,0 +1,20 @@
+@startuml
+title 学年学期
+actor admin
+participant lesson
+participant yearandterm
+alt 已登录
+admin -> lesson:访问课程页面
+activate admin
+activate lesson
+lesson -> lesson:add
+activate lesson
+lesson ->yearandterm
+activate yearandterm
+yearandterm --> lesson
+deactivate yearandterm
+deactivate lesson
+deactivate lesson
+deactivate admin
+end
+@enduml

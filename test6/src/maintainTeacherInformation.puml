@@ -1,0 +1,95 @@
+@startuml
+title:教师信息维护
+actor 管理员
+participant lesson
+participant lesson
+participant test
+== 查看lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->lesson
+activate lesson
+lesson->test
+activate test
+lesson-->管理员
+lesson-->lesson
+deactivate lesson
+test-->lesson
+deactivate lesson
+deactivate test
+deactivate 管理员
+== 增加lesson信息 ==
+管理员->lesson:输入lesson信息
+activate 管理员
+activate lesson
+lesson-->管理员:创建成功
+note left:message
+deactivate lesson
+deactivate 管理员
+
+== 修改lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->lesson
+activate lesson
+lesson->test
+activate test
+lesson-->管理员
+lesson-->lesson
+deactivate lesson
+test-->lesson
+deactivate lesson
+deactivate test
+管理员->lesson:update
+activate lesson
+lesson->lesson
+activate lesson
+lesson->lesson:update
+lesson->test
+activate test
+lesson->lesson:update
+test->test:update
+test-->lesson
+deactivate test
+lesson-->lesson
+deactivate lesson
+lesson-->管理员:修改成功
+deactivate lesson
+deactivate 管理员
+
+== 删除lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->lesson
+activate lesson
+lesson->test
+activate test
+lesson-->管理员
+lesson-->lesson
+deactivate lesson
+test-->lesson
+deactivate lesson
+deactivate test
+管理员->lesson:delete
+activate lesson
+lesson->lesson
+activate lesson
+lesson->lesson:delete
+lesson->test
+activate test
+lesson->lesson:delete
+test->test:delete
+test-->lesson
+deactivate test
+destroy test
+lesson-->lesson
+deactivate lesson
+destroy lesson
+lesson-->管理员:删除成功
+deactivate lesson
+destroy lesson
+deactivate 管理员
+@enduml

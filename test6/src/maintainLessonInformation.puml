@@ -1,0 +1,74 @@
+@startuml
+title:课程信息维护
+actor 管理员
+participant lesson
+participant teacher
+alt 默认已创建的课程信息都已被教师选择
+== 查看lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->teacher
+activate teacher
+lesson-->管理员
+teacher-->lesson
+deactivate teacher
+deactivate lesson
+deactivate 管理员
+== 增加lesson信息 ==
+管理员->lesson:输入lesson信息
+activate 管理员
+activate lesson
+lesson-->管理员:创建成功
+note left:message
+deactivate lesson
+deactivate 管理员
+
+== 修改lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->teacher
+activate teacher
+lesson-->管理员
+teacher-->lesson
+deactivate teacher
+deactivate lesson
+
+管理员->lesson:update
+activate lesson
+lesson->teacher
+activate teacher
+lesson->lesson:update
+teacher->teacher:update
+teacher-->lesson
+deactivate teacher
+lesson-->管理员:修改成功
+deactivate lesson
+deactivate 管理员
+
+== 删除lesson信息 ==
+管理员->lesson:取lesson信息
+activate 管理员
+activate lesson
+lesson->teacher
+activate teacher
+lesson-->管理员
+teacher-->lesson
+deactivate teacher
+deactivate lesson
+管理员->lesson:delete
+activate lesson
+lesson->teacher
+activate teacher
+lesson->lesson:delete
+teacher->teacher:delete
+teacher-->lesson
+deactivate teacher
+destroy teacher
+lesson-->管理员:删除成功
+deactivate lesson
+destroy lesson
+deactivate 管理员
+end
+@enduml

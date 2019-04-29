@@ -42,7 +42,7 @@ alt users身份为admin
     deactivate score
     deactivate users
 
-else users身份为teacher
+else users身份为lesson
     users -> lesson:访问本学期自选课程列表;
     activate users
     activate lesson

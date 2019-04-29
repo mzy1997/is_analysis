@@ -1,0 +1,52 @@
+@startuml
+title 维护个人信息
+actor users
+control controller
+database database
+alt 已登录
+    == 查看个人信息==
+    users -> controller:发送查看\n个人信息请求
+    activate users
+    activate controller
+    controller -> database
+    activate database
+    deactivate controller
+    database --> users
+    deactivate database
+    deactivate users
+    == 修改个人信息==
+    users -> controller:发送修改\n个人信息请求
+    activate users
+    activate controller
+    controller -> controller:跳转到\n修改页面
+    activate controller
+    users -> controller:输入信息
+    controller -> database
+    activate database
+    database --> controller:successful
+    deactivate database
+    deactivate controller
+    deactivate controller
+    deactivate users
+    == 修改密码==
+    users -> controller:修改密码请求
+    activate users
+    activate controller
+    controller -> controller:跳转页面
+    activate controller
+    users -> controller:输入信息
+    controller --> users:发送手机验证码
+    users ->controller:输入验证码
+    alt 验证码正确
+        controller ->database
+        activate database
+        database --> controller:successful
+        deactivate database
+        deactivate controller
+
+    else 验证码错误
+        controller -->users:验证码错误
+    deactivate controller
+    deactivate users
+end
+@enduml

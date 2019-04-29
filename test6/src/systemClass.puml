@@ -11,6 +11,7 @@ abstract class User{
 -github用户名 : String
 -github修改时间 : Date
 -是否被禁用 : Boolean
+-手机号 : int
 -show()
 -find()
 -update()
@@ -56,13 +57,14 @@ User <|-- Student
 User <|-- Teacher
 User <|-left- Admin
 
-class Lesson{
+class lesson{
 -课程编号 : int
 -课程名 : String
 -课程类型 : String
 -课程简介 : String
 -发布日期 : Date
--是否被选 :Boolean
+-是否被选 : Boolean
+-结课日期 : DATE
 -update()
 -delete()
 -find()
@@ -100,13 +102,13 @@ class ScoringItems{
 -show()
 }
 
-Teacher "0..1" o-- "0..*" Lesson:选课
-Student "0..*" o--"0..*" Lesson:选课
-Lesson "1" *--"*" Test:has
+Teacher "0..1" o-- "0..*" lesson:选课
+Student "0..*" o--"0..*" lesson:选课
+lesson "1" *--"*" Test:has
 Test "1" *--"*" ScoringItems:has
 Teacher -- Test:创建实验 >
 Teacher -- ScoringItems:设定评分项 >
-
+lesson -up- yearAndTerm
 
 class Score{
 -分数 : double
@@ -130,15 +132,20 @@ class TestAverage{
 -getAverage()
 }
 
-class LessonAverage{
+class lessonAverage{
 -分数 : double
 -课程编号 : int
 -学生学号 : int
 -github网址汇总 : String
 -getAverage()
 }
+
+class yearAndTerm{
+-学年学期号: String
+-课程编号 : int
+}
 ScoringItems "1"-right-"1" Score:单个评定项成绩
 Teacher "1"--"*" Score:评定成绩 >
-Test "1" -left->"*" TestAverage
-Lesson "1" -->"*" LessonAverage
+Test "1" -left->"1" TestAverage
+lesson "1" -->"1" lessonAverage
 @enduml

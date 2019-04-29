@@ -1,0 +1,46 @@
+@startuml
+actor users
+participant lesson
+participant lessonaverage
+== 教师结课 ==
+users ->lesson:获取课程信息
+activate users
+activate lesson
+lesson -> lessonaverage
+deactivate lesson
+activate lessonaverage
+lessonaverage --> users
+deactivate lessonaverage
+alt 成绩已评定
+    users->lesson:shutdown
+    activate lesson
+    activate lessonaverage
+    lesson ->lessonaverage
+    deactivate lessonaverage
+    deactivate lesson
+    deactivate users
+else 成绩未评定
+    users -> lesson:发送关闭请求
+    activate users
+    activate lesson
+    lesson --> users :课程流程未\n结束，无权限结课
+    deactivate users
+    deactivate lesson
+end
+== 管理员结课 ==
+users ->lesson:获取课程信息
+activate users
+activate lesson
+lesson -> lessonaverage
+deactivate lesson
+activate lessonaverage
+lessonaverage --> users
+deactivate lessonaverage
+users->lesson:shutdown
+activate lesson
+activate lessonaverage
+lesson ->lessonaverage
+deactivate lessonaverage
+deactivate lesson
+deactivate users
+@enduml

@@ -1,8 +1,9 @@
 @startuml
+title 选课
 actor users
 participant lesson
 participant student
-participant teacher
+participant lesson
 participant chooselesson
 == 教师选课 ==
 users -> lesson:查看课程列表
@@ -49,12 +50,12 @@ opt 修改选课
     deactivate chooselesson
     deactivate users
 == 教师修改选课 ==
-    users -> teacher:查看教师信息
-    activate teacher
+    users -> lesson:查看教师信息
+    activate lesson
     activate users
-    teacher -> chooselesson:查看已选课程
+    lesson -> chooselesson:查看已选课程
     activate chooselesson
-    deactivate teacher
+    deactivate lesson
     chooselesson -> chooselesson:delete
     alt 已有学生选择此课程
         activate chooselesson

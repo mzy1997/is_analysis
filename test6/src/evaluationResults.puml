@@ -1,5 +1,6 @@
 @startuml
-actor teacher
+title 评定成绩
+actor lesson
 participant lesson
 participant student
 participant test
@@ -9,8 +10,8 @@ participant testaverage
 participant lessonaverage
 
 alt 是否登录
-teacher ->lesson:访问已选课程
-activate teacher
+lesson ->lesson:访问已选课程
+activate lesson
 activate lesson
 lesson -> student:查看学生列表
 deactivate lesson
@@ -20,9 +21,9 @@ activate test
 test->scoreitems:访问该实验的评分项
 deactivate test
 activate scoreitems
-scoreitems -->teacher:返回评分项细则
+scoreitems -->lesson:返回评分项细则
 deactivate scoreitems
-teacher ->score:依据评分项细则为评分项评分
+lesson ->score:依据评分项细则为评分项评分
 activate score
 score -> testaverage:计算实验平均成绩
 deactivate score
@@ -34,6 +35,6 @@ lessonaverage -->student
 deactivate student
 deactivate testaverage
 deactivate lessonaverage
-deactivate teacher
+deactivate lesson
 end
 @enduml

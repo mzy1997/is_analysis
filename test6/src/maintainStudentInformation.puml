@@ -1,0 +1,140 @@
+@startuml
+title:学生信息维护
+actor 管理员
+participant student
+participant lesson
+participant lessonaverage
+participant test
+participant testaverage
+== 查看student信息 ==
+管理员->student:取student信息
+activate 管理员
+activate student
+student->lesson
+activate lesson
+lesson->test
+activate test
+lesson->lessonaverage
+activate lessonaverage
+lessonaverage-->lesson
+deactivate lessonaverage
+test -> testaverage
+activate testaverage
+testaverage --> test
+deactivate testaverage
+test --> lesson
+deactivate test
+lesson-->student
+student-->管理员
+deactivate student
+deactivate lesson
+deactivate 管理员
+
+== 增加student信息 ==
+管理员->student:输入student信息
+activate 管理员
+activate student
+student-->管理员:创建成功
+note left:message
+deactivate student
+deactivate 管理员
+
+== 修改student信息 ==
+管理员->student:取student信息
+activate 管理员
+activate student
+student->lesson
+activate lesson
+lesson->test
+activate test
+lesson->lessonaverage
+activate lessonaverage
+lessonaverage-->lesson
+deactivate lessonaverage
+test -> testaverage
+activate testaverage
+testaverage --> test
+deactivate testaverage
+test --> lesson
+deactivate test
+lesson-->student
+student-->管理员
+deactivate student
+deactivate lesson
+管理员 ->student
+activate student
+student -> student :update
+student -> lesson
+deactivate student
+activate lesson
+lesson -> lesson :update
+lesson -> lessonaverage
+activate lessonaverage
+lessonaverage -> lessonaverage:update
+lesson -> test
+deactivate lesson
+deactivate lessonaverage
+activate test
+test -> test:update
+test -> testaverage
+deactivate test
+activate testaverage
+testaverage -> testaverage:update
+activate testaverage
+deactivate testaverage
+deactivate testaverage
+deactivate 管理员
+
+
+
+== 删除student信息 ==
+管理员->student:取student信息
+activate 管理员
+activate student
+student->lesson
+activate lesson
+lesson->test
+activate test
+lesson->lessonaverage
+activate lessonaverage
+lessonaverage-->lesson
+deactivate lessonaverage
+test -> testaverage
+activate testaverage
+testaverage --> test
+deactivate testaverage
+test --> lesson
+deactivate test
+lesson-->student
+student-->管理员
+deactivate student
+deactivate lesson
+管理员 ->student
+activate student
+activate lesson
+student -> lesson
+student -> student:delete
+activate lessonaverage
+lesson -> lessonaverage
+deactivate student
+destroy student
+lessonaverage -> lessonaverage:delete
+deactivate lessonaverage
+destroy lessonaverage
+activate test
+lesson -> test
+lesson -> lesson :delete
+deactivate lesson
+destroy lesson
+activate testaverage
+test -> testaverage
+test -> test:delete
+activate testaverage
+testaverage -> testaverage:delete
+deactivate test
+destroy test
+deactivate testaverage
+deactivate testaverage
+destroy testaverage
+deactivate 管理员
+@enduml

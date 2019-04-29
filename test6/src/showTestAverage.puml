@@ -1,4 +1,5 @@
 @startuml
+title 查看实验平均分
 actor users
 participant lesson
 participant student
