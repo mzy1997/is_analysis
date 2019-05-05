@@ -29,6 +29,19 @@
 - [学生列表用例][4]
 - [选择课程][5]
 - [设定实验与评分项][6]
+- [学年学期][7]
+- [查看实验平均分][8]
+- [查看评分项得分][9]
+- [查看课程平均分][10]
+- [登录登出][11]
+- [结束课程][12]
+- [维护个人信息][13]
+- [维护学生信息][14]
+- [维护课程信息][15]
+- [设定实验与评分项][16]
+- [评定成绩][18]
+- [选课][19]
+
 
 [1]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/UserCase.puml     "源码" 
 [2]: https://github.com/mzy1997/is_analysis/blob/master/test6/src/systemClass.puml     "源码" 
@@ -36,3 +49,16 @@
 [4]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/学生列表.md     "学生列表用例"
 [5]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/选课.md     "选择课程用例"
 [6]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/设定实验与评分项.md     "设定实验与评分项"
+[7]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/学期学年.md     "学期学年"
+[8]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/查看实验平均分.md     "查看实验平均分"
+[9]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/查看评分项得分.md     "查看评分项得分"
+[10]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/查看课程平均分.md     "查看课程平均分"
+[11]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/登录登出.md     "登录登出"
+[12]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/结束课程.md     "结束课程"
+[13]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/维护个人信息.md     "维护个人信息"
+[14]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/维护学生信息.md     "维护学生信息"
+[15]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/维护教师信息.md     "维护教师信息"
+[16]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/维护课程信息.md     "维护课程信息"
+[17]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/设定实验与评分项.md     "设定实验与评分项"
+[18]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/评定成绩.md     "评定成绩"
+[19]: https://github.com/mzy1997/is_analysis/blob/master/test6/用例/评定成绩.md     "选课"

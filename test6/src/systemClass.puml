@@ -143,6 +143,10 @@ class lessonAverage{
 class yearAndTerm{
 -学年学期号: String
 -课程编号 : int
+-update()
+-delete()
+-find()
+-insert()
 }
 ScoringItems "1"-right-"1" Score:单个评定项成绩
 Teacher "1"--"*" Score:评定成绩 >
