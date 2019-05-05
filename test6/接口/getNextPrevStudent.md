@@ -5,7 +5,7 @@
 <ul>
 <li>功能： 返回一个学生的上一个或者下一个学生的学号</li>
 <li>权限： 教师/管理员登录后。</li>
-<li>API请求地址： 接口基本地址/v1/api/getNextPrevStudent/<is_next>/<user_id></li>
+<li>API请求地址： 接口基本地址/v1/api/getNextPrevStudent/is_next/user_id</li>
 <li>请求方式 ： GET</li>
 
 <li>请求参数说明:</li>
