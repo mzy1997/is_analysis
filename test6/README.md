@@ -39,7 +39,7 @@
 - [维护个人信息][13]，[修改个人信息界面][29],[查看个人信息界面][30]，[修改密码][31]
 - [维护学生信息][14]，
 - [维护教师信息][15]，以上两个用例界面在两个界面中，[修改信息界面][32],[删除信息界面][33]
-- [维护课程信息][16]，[修改界面][34],[删除界面][35]
+- [维护课程信息][16]，[修改界面][34],[删除界面][35]，[主页][38]
 - [评定成绩][17],[界面1][36]，[界面2][37]
 
 
@@ -80,3 +80,4 @@
 [35]: https://mzy1997.github.io/is_analysis_finalDesign_pages/deletelesson.html   "删除界面"
 [36]: https://mzy1997.github.io/is_analysis_finalDesign_pages/evaluationresults.html   "界面1"
 [37]: https://mzy1997.github.io/is_analysis_finalDesign_pages/resultsdetails.html   "界面2"
+[38]: https://mzy1997.github.io/is_analysis_finalDesign_pages/index.html   "主页"
